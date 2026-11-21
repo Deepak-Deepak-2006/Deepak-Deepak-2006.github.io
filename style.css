@@ -375,3 +375,32 @@ button, input { font: inherit; }
     .contact-actions { flex-direction: column; }
     .footer-inner { height: 90px; }
 }
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.profile-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    padding: 2px;
+    background: conic-gradient(from var(--angle), transparent, #00ff88, transparent);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter: drop-shadow(0 0 5px rgba(0,255,136,0.75));
+    pointer-events: none;
+    z-index: 3;
+    animation: profileBorderRotate 2.5s linear infinite;
+}
+
+@keyframes profileBorderRotate {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
