@@ -124,10 +124,10 @@ button, input { font: inherit; }
 .skill-panel h3 { font-family: "Manrope", sans-serif; margin-bottom: 22px; }
 .skill-list, .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-list span, .tag-list span { border: 1px solid var(--border); background: rgba(255,255,255,.025); border-radius: 100px; color: #bbc2cf; font-size: 12px; padding: 8px 12px; }
-.skill-list span:nth-child(-n+3) {
+.skill-list span {
     transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
-.skill-list span:nth-child(-n+3):hover {
+.skill-list span:hover {
     color: var(--accent);
     border-color: rgba(34,197,94,.7);
     box-shadow: 0 8px 22px rgba(34,197,94,.18);
